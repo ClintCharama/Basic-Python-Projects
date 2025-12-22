@@ -1,1 +1,47 @@
+tasks = list()
+while True:
+
+  print('\n\n\nWelcome to your to do list')
+  print("--------------------------")
+  print('1) Add a task')
+  print('2) Remove a task')
+  print('3) View the list')
+  print('4) Exit\n')
+  action = int(input('What would you like to do? '))
+  if action == 1:
+    newTask = input('Enter new task: ')
+    tasks.append(newTask)
+    print(f'"{newTask}" has been successfully added to the list')
+
+  elif action == 2:
+
+    if len(tasks) == 0:
+      print('You currently have no tasks')
+    else:
+     print('\nCurrent Tasks')
+     for count in range(len(tasks)):
+       print(f'Task #{count + 1} : {tasks[count]}')
+
+     toRemove = int(input('Which task number do you want to remove? '))
+     toRemove -= 1
+     if toRemove >= len(tasks):
+      print('Selected task does not exist')
+     else:
+      toRemoveFull = tasks[toRemove]
+      tasks.pop(toRemove)
+      print(f'"{toRemoveFull}" has been successfully removed from the list')
+
+  elif action == 3:
+    if len(tasks) == 0:
+      print('\nYou currently have no tasks')
+    else:
+     print('\nCurrent Tasks')
+     for count in range(len(tasks)):
+       print(f'Task #{count + 1}: {tasks[count]}')
+
+  elif action == 4:
+    break
+
+  else:
+    print('Invalid option, please try again')
 
