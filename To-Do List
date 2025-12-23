@@ -13,22 +13,22 @@ def AddTask():
   print(f'"{newTask}" has been successfully added to the list')
 
 def RemoveTask():
-  toRemove = int(input('Which task number do you want to remove? '))
-  toRemove -= 1
-  if toRemove >= len(tasks):
+   toRemove = int(input('Which task number do you want to remove? '))
+   toRemove -= 1
+   if toRemove >= len(tasks):
     print('Selected task does not exist')
-  else:
+   else:
     toRemoveFull = tasks[toRemove]
     tasks.pop(toRemove)
     print(f'"{toRemoveFull}" has been successfully removed from the list')
 
 def WhiteSpace():
-  print('\n\n\n')
+  print('\n\n')
 
 while True:
-
+  print('--------------------------')
   print('Welcome to your to do list')
-  print("--------------------------")
+  print('--------------------------')
   print('1) Add a task')
   print('2) Remove a task')
   print('3) View the list')
@@ -40,7 +40,11 @@ while True:
 
   elif action == 2:
      PrintList()
-     RemoveTask()
+     if len(tasks) == 0:
+      WhiteSpace()
+      continue
+     else:
+      RemoveTask()
      WhiteSpace()
 
   elif action == 3:
@@ -52,5 +56,3 @@ while True:
 
   else:
     print('Invalid option, please try again')
-
-
