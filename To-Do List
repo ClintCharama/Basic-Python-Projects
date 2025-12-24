@@ -56,3 +56,4 @@ while True:
 
   else:
     print('Invalid option, please try again')
+    WhiteSpace()
