@@ -1,9 +1,9 @@
-ExpenseCategories = {'Housing': list(), 'Transport': list(), 'Food': list(), 'Savings': list(), 'Toiletries': list(), 'Offering': list(), 'Utilities': list(), 'Extras': list()}
+ExpenseCategories = {'Housing': list(), 'Transport': list(), 'Food': list(), 'Savings': list(), 'Toiletries': list(), 'Offering': list(), 'Utilities': list(), 'Entertainment': list()}
 
 
 #Add new expense
 def NewExpense():
-  Category = input('Enter category from the following: Housing, Transport, Food, Savings, Toiletries, Offering, Utilities, Extras: ')
+  Category = input('Enter category from the following: Housing, Transport, Food, Savings, Toiletries, Offering, Utilities, Entertaiment: ')
   Description = input('Enter description: ')
   Amount = float(input('Enter amount: '))
 
@@ -13,7 +13,6 @@ def NewExpense():
 #View all the expenses
 def ViewAll():
   for key in ExpenseCategories:
-    
     if not ExpenseCategories[key]:
      print(f'There are no expenses in {key}\n')
     else:
@@ -27,7 +26,6 @@ def ViewTotalSpent():
   for keys in ExpenseCategories:
       for items in ExpenseCategories[keys]:
         Total += items[1]
-
   print(f'The total of all expenses is P{Total:.2f}')
 
 #View all the amounts for categories
