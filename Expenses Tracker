@@ -1,0 +1,71 @@
+ExpenseCategories = {'Housing': list(), 'Transport': list(), 'Food': list(), 'Savings': list(), 'Toiletries': list(), 'Offering': list(), 'Utilities': list(), 'Extras': list()}
+
+
+#Add new expense
+def NewExpense():
+  Category = input('Enter category from the following: Housing, Transport, Food, Savings, Toiletries, Offering, Utilities, Extras: ')
+  Description = input('Enter description: ')
+  Amount = float(input('Enter amount: '))
+
+  NewRecord = (Description, Amount)
+  ExpenseCategories[Category].append(NewRecord)
+
+#View all the expenses
+def ViewAll():
+  for key in ExpenseCategories:
+    
+    if not ExpenseCategories[key]:
+     print(f'There are no expenses in {key}\n')
+    else:
+      print(f'{key}:')
+      for item in ExpenseCategories[key]:
+        print(f'P{item[1]:.2f}    {item[0]}\n')
+     
+#View the total amount spent
+def ViewTotalSpent():
+  Total = 0
+  for keys in ExpenseCategories:
+      for items in ExpenseCategories[keys]:
+        Total += items[1]
+
+  print(f'The total of all expenses is P{Total:.2f}')
+
+#View all the amounts for categories
+def ViewByCategory():
+  for keys in ExpenseCategories:
+    Total = 0
+    for items in ExpenseCategories[keys]:
+      Total += items[1]
+    print(f'The total expenditure for {keys} is P{Total:.2f}')
+
+while True:
+  print('------')
+  print('Menu')
+  print('------')
+  print('1. Add expense')
+  print('2. View all expenses')
+  print('3. View total spent')
+  print('4. View expences by category')
+  print('5. Exit\n')
+
+  action = int(input('Select an option: '))
+  if action == 0 or action == 1 or action == 2 or action == 3 or action == 4 or action == 5:
+    if action == 1:
+      NewExpense()
+      print()
+
+    elif action == 2:
+      ViewAll()
+      print()
+
+    elif action == 3:
+      ViewTotalSpent()
+      print()
+
+    elif action == 4:
+      ViewByCategory()
+      print()
+
+    elif action == 5:
+      break
+    
