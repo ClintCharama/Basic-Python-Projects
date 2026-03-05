@@ -3,7 +3,7 @@ balance = 100
 log = list()
 
 def deposit(balance):
-  depositAmount = float(input('Enter amount to depost\nBWP'))
+  depositAmount = float(input('Enter amount to deposit\nBWP'))
   balance += depositAmount
   print(f"BWP{depositAmount:.2f} has been successfully depositted into your account.")
   now = datetime.now()
@@ -64,7 +64,7 @@ while True:
       for i in log:
         print(i)
   elif action == 5:
-    print('Thank you for baking wiht ClintBanks™')
+    print('Thank you for banking with ClintBanks™')
     break
   else:
     print('Invalid option. Please try again.')
