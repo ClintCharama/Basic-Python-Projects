@@ -6,7 +6,8 @@ def deposit(balance):
   depositAmount = float(input('Enter amount to depost\nBWP'))
   balance += depositAmount
   print(f"BWP{depositAmount:.2f} has been successfully depositted into your account.")
-  log.append(f"BWP{depositAmount:.2f} deposited on {datetime.now().strftime('%A %d %B %Y')} at {datetime.now().strftime('%H:%M')}")
+  now = datetime.now()
+  log.append(f"BWP{depositAmount:.2f} deposited on {now.strftime('%A %d %B %Y')} at {now.strftime('%H:%M')}")
   return balance
 
 def withdraw(balance):
@@ -22,7 +23,8 @@ def withdraw(balance):
         approveWithdrawal = True
         balance -= withdrawAmount
         print(f"BWP{withdrawAmount:.2f} has been successfully withdrawn from your account.")
-        log.append(f"BWP{withdrawAmount:.2f} withdrawn on {datetime.now().strftime('%A %d %B %Y')} at {datetime.now().strftime('%H:%M')}")
+        now = datetime.now()
+        log.append(f"BWP{withdrawAmount:.2f} withdrawn on {now.strftime('%A %d %B %Y')} at {now.strftime('%H:%M')}")
         return balance
       else:
         print('Insufficient funds. Please try again\n')
