@@ -4,8 +4,8 @@ def PrintList():
       print('You currently have no tasks')
   else:
      print('\nCurrent Tasks')
-     for count in range(len(tasks)):
-       print(f'Task #{count + 1} : {tasks[count]}')
+     for count, task in enumerate(tasks, start = 1):
+      print(f'Task #{count}: {task}')
 
 def AddTask():
   newTask = input('Enter new task: ')
