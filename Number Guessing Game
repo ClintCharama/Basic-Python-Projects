@@ -1,0 +1,46 @@
+ #game
+from random import *
+def game():
+
+  number = randrange(0, 100)
+  attempts = 0
+  correct = False
+
+  print('Guess the number between 0 and 100')
+  while attempts < 5 and not correct:
+
+    try:
+      guess = int(input())
+    except Exception as ex:
+      print('Please enter a valid number\n')
+      continue
+    else:
+      if guess == number:
+        correct = True
+        print('You have guessed the correct number')
+      else:
+        attempts += 1
+        if guess > number:
+          print('Too high')
+        elif guess < number:
+          print('Too low')
+        print(f'You have {5 - attempts} guesses left')
+        print()
+  if correct is False: print(f'You lost. The correct number was {number}')
+  print('\n\n\n')
+  
+
+#Menu
+while True:
+  print("----------\n   Menu\n----------")
+  try:
+    MenuOption = int(input('1.) New Game \n2.) Exit\n'))
+  except:
+    print('Please enter a valid option')
+  print()
+  if MenuOption == 1:
+    game()
+  elif MenuOption == 2:
+    break
+  else:
+    print('Invalid option. Please try again\n')
